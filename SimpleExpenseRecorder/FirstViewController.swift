@@ -8,11 +8,30 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UICollectionViewDataSource  {
+    
+    
+    @IBOutlet weak var collectionViewHaha: UICollectionView!
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionViewHaha.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as UICollectionViewCell
+        
+        cell.backgroundColor = UIColor.blue()
+        return cell
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        collectionViewHaha.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        
     }
 
     override func didReceiveMemoryWarning() {
