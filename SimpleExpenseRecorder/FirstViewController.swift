@@ -10,33 +10,16 @@ import UIKit
 
 class FirstViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UITextFieldDelegate  {
     
-    
     @IBOutlet weak var textFieldAmount: UITextField!
-    @IBOutlet weak var viewExpenseFamily: UIView!
-    
-    @IBOutlet weak var labelDateConfirm: UILabel!
-    
-    @IBOutlet weak var labelExpenseConfirm: UILabel!
-    
     @IBOutlet weak var textFiedMemo: UITextField!
+    @IBOutlet weak var viewExpenseFamily: UIView!
+    @IBOutlet weak var datePicker: UIDatePicker!
+        
+    var expenseNo: Int = 0
+    var amountYen: Int = 0
+    var memoString: String = ""
     
-    
-    
-//    @IBAction func textFieldMemoEditingDidEnd(_ sender: UITextField) {
-//
-//        textFiedMemo.resignFirstResponder()
-//    }
-//
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textFiedMemo.resignFirstResponder()
-        return true
-    }
-    
-    
-    var expenseNo:Int!
-    var amountYen:Int!
-    
-    let expenseList :ExpenseList = ExpenseList.sharedInstance
+    let expenseList: ExpenseList = ExpenseList.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,10 +48,11 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @objc func hitKeyboardReturnKey(){
         
-        let textInt:Int = ( self.textFieldAmount.text == "" ) ? 0 : Int(self.textFieldAmount.text!)! //入力欄に入っている数値。未入力だったときは0とする
+        let spaceDeletedString:String = (self.textFieldAmount.text?.replacingOccurrences(of: " ", with: ""))!
+        
+        let textInt:Int = ( spaceDeletedString == "" ) ? 0 : Int(spaceDeletedString)! //入力欄に入っている数値。未入力だったときは0とする
         
         self.amountYen = textInt
-        self.labelExpenseConfirm.text = String(textInt)
 
         self.textFieldAmount.endEditing(true)
         
@@ -97,7 +81,6 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         let cell : UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         let label = cell.contentView.viewWithTag(1) as! UILabel
         label.text = String(expenseList.expenses[indexPath.row])
-        
 
         return cell
         
@@ -105,9 +88,49 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
 
     func collectionView(_ collectionView: UICollectionView,didSelectItemAt indexPath: IndexPath){
         expenseNo = expenseList.expenses[indexPath.row]
-        print(expenseNo)
+
+        let selectedCell:UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
+        let label = selectedCell.contentView.viewWithTag(1) as! UILabel
+        label.backgroundColor = UIColor(red: 236/255, green: 171/255, blue: 200/255, alpha: 1) //pale orange
+    }
+
+    func collectionView(_ collectionView: UICollectionView,didDeselectItemAt indexPath: IndexPath){
+        let selectedCell:UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
+        let label = selectedCell.contentView.viewWithTag(1) as! UILabel
+        label.backgroundColor = UIColor(red: 178/255, green: 233/255, blue: 231/255, alpha: 1)//purple(default color)
 
     }
+
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        self.textFiedMemo.frame.origin.y -= 100
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.textFiedMemo.frame.origin.y += 100
+        self.memoString = textFiedMemo.description
+        textFiedMemo.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func buttonApply(_ sender: Any) {
+
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "yyyy-MM-dd"
+        let strDate = dateformatter.string(from: datePicker.date)
+        let strSeparated = strDate.components(separatedBy: "-")
+
+        let newRecord: RecordStruct = RecordStruct(num: expenseNo,
+                                     amount: amountYen,
+                                     month: Int(strSeparated[1])!,
+                                     day: Int(strSeparated[2])!,
+                                     memo: memoString)
+        
+       expenseList.records.append(newRecord)
+        
+    }
+
     
     
 }
