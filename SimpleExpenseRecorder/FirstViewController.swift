@@ -14,7 +14,29 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var textFiedMemo: UITextField!
     @IBOutlet weak var viewExpenseFamily: UIView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    
+    @IBOutlet weak var viewHelp: UIView!
+    
+    @IBOutlet weak var textViewHelp: UITextView!
+    
+    @IBAction func buttonCloserHelp(_ sender: Any) {
         
+        self.viewHelp.isHidden = true
+        
+    }
+    
+    @IBAction func buttonHelp(_ sender: Any) {
+        self.viewHelp.isHidden = false
+        
+        var displayStrings:String = ""
+        for word in expenseList.descriptionExpence{
+            displayStrings.append(word)
+            displayStrings.append("\n")
+        }
+        self.textViewHelp.text = displayStrings
+        
+        
+    }
     var expenseNo: Int = 0
     var amountYen: Int = 0
     var memoString: String = ""
@@ -24,6 +46,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.viewHelp.isHidden = true
         textFiedMemo.delegate = self as UITextFieldDelegate
         
         expenseNo = 0
