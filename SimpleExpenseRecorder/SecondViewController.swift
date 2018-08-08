@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-     let expenseList: ExpenseList = ExpenseList.sharedInstance
+     let expenseList: ExpenseManager = ExpenseManager.sharedInstance
     
     
     
@@ -18,10 +18,24 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        displayExpendRecords()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        displayExpendRecords()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    func displayExpendRecords(){
         
         var displayStrings:String = ""
         
+        //        expenseList.loadRecords()
         for word in expenseList.records{
             displayStrings.append(String(word.num))
             displayStrings.append(" ")
@@ -36,15 +50,6 @@ class SecondViewController: UIViewController {
             displayStrings.append("\n")
         }
         self.textViewRecords.text = displayStrings
-        
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

@@ -29,7 +29,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.viewHelp.isHidden = false
         
         var displayStrings:String = ""
-        for word in expenseList.descriptionExpence{
+        for word in expenseManager.catDescription{
             displayStrings.append(word)
             displayStrings.append("\n")
         }
@@ -38,19 +38,21 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         
     }
     var expenseNo: Int = 0
-    var amountYen: Int = 0
+    var amountYen: String = ""
     var memoString: String = ""
     
-    let expenseList: ExpenseList = ExpenseList.sharedInstance
+    let expenseManager: ExpenseManager = ExpenseManager.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        expenseManager.loadRecords()
+
         self.viewHelp.isHidden = true
         textFiedMemo.delegate = self as UITextFieldDelegate
         
         expenseNo = 0
-        amountYen = 0
+        amountYen = ""
         
         //Return Button for Num key input
         let returnKeyView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
@@ -73,9 +75,9 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         let spaceDeletedString:String = (self.textFieldAmount.text?.replacingOccurrences(of: " ", with: ""))!
         
-        let textInt:Int = ( spaceDeletedString == "" ) ? 0 : Int(spaceDeletedString)! //入力欄に入っている数値。未入力だったときは0とする
+//        let textInt:Int = ( spaceDeletedString == "" ) ? 0 : Int(spaceDeletedString)!
         
-        self.amountYen = textInt
+        self.amountYen = spaceDeletedString
 
         self.textFieldAmount.endEditing(true)
         
@@ -94,7 +96,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return expenseList.expenses.count
+        return expenseManager.category.count
     }
     
     
@@ -103,14 +105,14 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
 
         let cell : UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         let label = cell.contentView.viewWithTag(1) as! UILabel
-        label.text = String(expenseList.expenses[indexPath.row])
+        label.text = String(expenseManager.category[indexPath.row])
 
         return cell
         
     }
 
     func collectionView(_ collectionView: UICollectionView,didSelectItemAt indexPath: IndexPath){
-        expenseNo = expenseList.expenses[indexPath.row]
+        expenseNo = expenseManager.category[indexPath.row]
 
         let selectedCell:UICollectionViewCell = collectionView.cellForItem(at: indexPath)!
         let label = selectedCell.contentView.viewWithTag(1) as! UILabel
@@ -132,7 +134,7 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.textFiedMemo.frame.origin.y += 100
-        self.memoString = textFiedMemo.description
+        self.memoString = textFiedMemo.text!
         textFiedMemo.resignFirstResponder()
         return true
     }
@@ -144,13 +146,11 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         let strDate = dateformatter.string(from: datePicker.date)
         let strSeparated = strDate.components(separatedBy: "-")
 
-        let newRecord: RecordStruct = RecordStruct(num: expenseNo,
-                                     amount: amountYen,
-                                     month: Int(strSeparated[1])!,
-                                     day: Int(strSeparated[2])!,
-                                     memo: memoString)
-        
-       expenseList.records.append(newRecord)
+        expenseManager.appendRecord(num: String(expenseNo),
+                                    amount: amountYen,
+                                    month: strSeparated[1],
+                                    day: strSeparated[2],
+                                    memo: memoString)
         
     }
 

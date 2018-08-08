@@ -17,7 +17,7 @@
 		41B0DA372118162700C8A674 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B0DA352118162700C8A674 /* LaunchScreen.storyboard */; };
 		41B0DA422118162700C8A674 /* SimpleExpenseRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA412118162700C8A674 /* SimpleExpenseRecorderTests.swift */; };
 		41B0DA4D2118162700C8A674 /* SimpleExpenseRecorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA4C2118162700C8A674 /* SimpleExpenseRecorderUITests.swift */; };
-		41B82F81211944AB00C5791F /* ExpenseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B82F80211944AB00C5791F /* ExpenseList.swift */; };
+		41BB5470211AB36D00E2292B /* ExpenseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BB546F211AB36D00E2292B /* ExpenseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		41B0DA482118162700C8A674 /* SimpleExpenseRecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleExpenseRecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B0DA4C2118162700C8A674 /* SimpleExpenseRecorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleExpenseRecorderUITests.swift; sourceTree = "<group>"; };
 		41B0DA4E2118162700C8A674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41B82F80211944AB00C5791F /* ExpenseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseList.swift; sourceTree = "<group>"; };
+		41BB546F211AB36D00E2292B /* ExpenseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +128,7 @@
 				41B0DA2C2118162700C8A674 /* FirstViewController.swift */,
 				41B0DA2E2118162700C8A674 /* SecondViewController.swift */,
 				41B0DA302118162700C8A674 /* Main.storyboard */,
-				41B82F80211944AB00C5791F /* ExpenseList.swift */,
+				41BB546F211AB36D00E2292B /* ExpenseManager.swift */,
 				41B0DA332118162700C8A674 /* Assets.xcassets */,
 				41B0DA352118162700C8A674 /* LaunchScreen.storyboard */,
 				41B0DA382118162700C8A674 /* Info.plist */,
@@ -305,7 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41B0DA2F2118162700C8A674 /* SecondViewController.swift in Sources */,
-				41B82F81211944AB00C5791F /* ExpenseList.swift in Sources */,
+				41BB5470211AB36D00E2292B /* ExpenseManager.swift in Sources */,
 				41B0DA2B2118162700C8A674 /* AppDelegate.swift in Sources */,
 				41B0DA2D2118162700C8A674 /* FirstViewController.swift in Sources */,
 			);
