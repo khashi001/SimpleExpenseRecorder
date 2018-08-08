@@ -65,9 +65,9 @@ class SecondViewController: UIViewController,UITextFieldDelegate {
         
         var displayStrings:String = ""
         for (index,word) in expenseList.records.enumerated(){
-            displayStrings.append("[")
+            displayStrings.append("")
             displayStrings.append(String(index))
-            displayStrings.append("] ")
+            displayStrings.append(" ")
             displayStrings.append(String(word.num))
             displayStrings.append(" ")
             displayStrings.append(String(word.amount))
