@@ -73,6 +73,12 @@ class ExpenseManager: NSObject{
             _num: num, _amount: amount, _month: month, _day: day, _memo: memo))
         saveRecords()
     }
+    
+    func removeRecord(_num: Int){
+        self.records.remove(at: _num)
+        saveRecords()
+    }
+
 
     func saveRecords(){
         let archivedObject = NSKeyedArchiver.archivedData(withRootObject: records)
@@ -86,6 +92,8 @@ class ExpenseManager: NSObject{
         }
         else{
             self.records = []
+            //index 0 is Heading
+            self.records.append( ExpenseRecord(_num: "No", _amount: "Amt", _month: "MM", _day: "DD", _memo: "Memo"))
         }
     }
 }
