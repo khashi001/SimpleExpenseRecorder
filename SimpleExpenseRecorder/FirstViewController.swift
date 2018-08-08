@@ -12,7 +12,6 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBOutlet weak var textFieldAmount: UITextField!
     @IBOutlet weak var textFiedMemo: UITextField!
-    @IBOutlet weak var viewExpenseFamily: UIView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var viewHelp: UIView!
@@ -55,10 +54,10 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         amountYen = ""
         
         //Return Button for Num key input
-        let returnKeyView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        let returnKeyView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 80))
         returnKeyView.backgroundColor = UIColor.darkGray
         
-        let returnKeyButton = UIButton(frame:CGRect(x:105, y:5, width:170, height:40) )
+        let returnKeyButton = UIButton(frame:CGRect(x:105, y:5, width:170, height:70) )
         returnKeyButton .backgroundColor = UIColor.lightGray
         returnKeyButton.setTitle("Done", for: UIControlState.normal)
         returnKeyButton.titleLabel?.font = UIFont(name:"MomsDiner",size:23)
