@@ -211,7 +211,7 @@
                         <color key="backgroundColor" red="0.7953712745" green="0.87193234249999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="First" image="first" landscapeImage="first" largeContentSizeImage="first" selectedImage="first" id="acW-dT-cKf"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="datePicker" destination="Kb8-tK-I4t" id="sFx-vG-xJH"/>
@@ -284,7 +284,7 @@
                         <color key="backgroundColor" red="0.6732382792426822" green="0.8516843424941225" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Second" image="second" landscapeImage="second" largeContentSizeImage="second" selectedImage="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="textFieldNum" destination="aTX-Di-KgB" id="dfZ-D8-gYV"/>
                         <outlet property="textViewRecords" destination="7BO-uA-039" id="Fc7-l2-z8c"/>
