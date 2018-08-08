@@ -157,6 +157,10 @@
                                     <action selector="buttonHelp:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Gbn-Uc-kxA"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZX0-Uf-KoL">
+                                <rect key="frame" x="60" y="258" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Mz-BE-QHc" userLabel="viewHelp">
                                 <rect key="frame" x="66" y="182" width="222" height="339"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -211,6 +215,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="datePicker" destination="Kb8-tK-I4t" id="sFx-vG-xJH"/>
+                        <outlet property="imageViewApplyProcessing" destination="ZX0-Uf-KoL" id="jNK-Ey-kBX"/>
                         <outlet property="textFiedMemo" destination="P5M-yQ-VGB" id="qBa-1w-34F"/>
                         <outlet property="textFieldAmount" destination="DuS-5p-jiY" id="hev-l3-lBs"/>
                         <outlet property="textViewHelp" destination="6T2-yb-73u" id="cNd-l5-S2P"/>

@@ -75,8 +75,10 @@ class ExpenseManager: NSObject{
     }
     
     func removeRecord(_num: Int){
-        self.records.remove(at: _num)
-        saveRecords()
+        if(self.records.count > _num){
+            self.records.remove(at: _num)
+            saveRecords()
+        }
     }
 
 

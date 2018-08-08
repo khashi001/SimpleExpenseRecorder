@@ -33,14 +33,18 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
             displayStrings.append("\n")
         }
         self.textViewHelp.text = displayStrings
-        
-        
     }
+    
+    @IBOutlet weak var imageViewApplyProcessing: UIImageView!
+    
+    
     var expenseNo: Int = 0
     var amountYen: String = ""
     var memoString: String = ""
     
     let expenseManager: ExpenseManager = ExpenseManager.sharedInstance
+    
+    var animationImages:[UIImage] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +71,9 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
         returnKeyView.addSubview(returnKeyButton)
         
         self.textFieldAmount.inputAccessoryView = returnKeyView
+        
+        //Animation
+        makeAnimationImages()
 
     }
     
@@ -139,7 +146,11 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     @IBAction func buttonApply(_ sender: Any) {
+        
+        //Animation Start
+        imageViewApplyProcessing.startAnimating()
 
+        //Append Record
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "yyyy-MM-dd"
         let strDate = dateformatter.string(from: datePicker.date)
@@ -152,6 +163,28 @@ class FirstViewController: UIViewController, UICollectionViewDelegate, UICollect
                                     memo: memoString)
         
     }
+    
+    func    makeAnimationImages(){
+        let img01 = UIImage(contentsOfFile: Bundle.main.path(forResource: "an01", ofType: "png")!)
+        let img02 = UIImage(contentsOfFile: Bundle.main.path(forResource: "an02", ofType: "png")!)
+        let img03 = UIImage(contentsOfFile: Bundle.main.path(forResource: "an03", ofType: "png")!)
+        let img04 = UIImage(contentsOfFile: Bundle.main.path(forResource: "an04", ofType: "png")!)
+        let img05 = UIImage(contentsOfFile: Bundle.main.path(forResource: "an05", ofType: "png")!)
+        let img06 = UIImage(contentsOfFile: Bundle.main.path(forResource: "an06", ofType: "png")!)
+
+        animationImages.append(img01!)
+        animationImages.append(img02!)
+        animationImages.append(img03!)
+        animationImages.append(img04!)
+        animationImages.append(img05!)
+        animationImages.append(img06!)
+        
+        self.imageViewApplyProcessing.animationImages = animationImages;
+        self.imageViewApplyProcessing.animationDuration = 1.0;
+        self.imageViewApplyProcessing.animationRepeatCount = 1;
+        
+    }
+
 
     
     

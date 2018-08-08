@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4119012921182C0E005F90E6 /* FSCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4119012821182C0E005F90E6 /* FSCalendar.framework */; };
-		4119012E2118347E005F90E6 /*  apply.png in Resources */ = {isa = PBXBuildFile; fileRef = 4119012D2118347E005F90E6 /*  apply.png */; };
 		41B0DA2B2118162700C8A674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA2A2118162700C8A674 /* AppDelegate.swift */; };
 		41B0DA2D2118162700C8A674 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA2C2118162700C8A674 /* FirstViewController.swift */; };
 		41B0DA2F2118162700C8A674 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA2E2118162700C8A674 /* SecondViewController.swift */; };
@@ -18,6 +17,12 @@
 		41B0DA422118162700C8A674 /* SimpleExpenseRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA412118162700C8A674 /* SimpleExpenseRecorderTests.swift */; };
 		41B0DA4D2118162700C8A674 /* SimpleExpenseRecorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B0DA4C2118162700C8A674 /* SimpleExpenseRecorderUITests.swift */; };
 		41BB5470211AB36D00E2292B /* ExpenseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BB546F211AB36D00E2292B /* ExpenseManager.swift */; };
+		41BB5485211AD76700E2292B /* an02.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BB547F211AD76700E2292B /* an02.png */; };
+		41BB5486211AD76700E2292B /* an04.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BB5480211AD76700E2292B /* an04.png */; };
+		41BB5487211AD76700E2292B /* an03.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BB5481211AD76700E2292B /* an03.png */; };
+		41BB5488211AD76700E2292B /* an06.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BB5482211AD76700E2292B /* an06.png */; };
+		41BB5489211AD76700E2292B /* an05.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BB5483211AD76700E2292B /* an05.png */; };
+		41BB548A211AD76700E2292B /* an01.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BB5484211AD76700E2292B /* an01.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +44,6 @@
 
 /* Begin PBXFileReference section */
 		4119012821182C0E005F90E6 /* FSCalendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSCalendar.framework; path = Carthage/Build/iOS/FSCalendar.framework; sourceTree = "<group>"; };
-		4119012D2118347E005F90E6 /*  apply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = " apply.png"; sourceTree = "<group>"; };
 		41B0DA272118162700C8A674 /* SimpleExpenseRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleExpenseRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B0DA2A2118162700C8A674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41B0DA2C2118162700C8A674 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,12 @@
 		41B0DA4C2118162700C8A674 /* SimpleExpenseRecorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleExpenseRecorderUITests.swift; sourceTree = "<group>"; };
 		41B0DA4E2118162700C8A674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41BB546F211AB36D00E2292B /* ExpenseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseManager.swift; sourceTree = "<group>"; };
+		41BB547F211AD76700E2292B /* an02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = an02.png; sourceTree = "<group>"; };
+		41BB5480211AD76700E2292B /* an04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = an04.png; sourceTree = "<group>"; };
+		41BB5481211AD76700E2292B /* an03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = an03.png; sourceTree = "<group>"; };
+		41BB5482211AD76700E2292B /* an06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = an06.png; sourceTree = "<group>"; };
+		41BB5483211AD76700E2292B /* an05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = an05.png; sourceTree = "<group>"; };
+		41BB5484211AD76700E2292B /* an01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = an01.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +104,12 @@
 		4119012C21183454005F90E6 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				4119012D2118347E005F90E6 /*  apply.png */,
+				41BB5484211AD76700E2292B /* an01.png */,
+				41BB547F211AD76700E2292B /* an02.png */,
+				41BB5481211AD76700E2292B /* an03.png */,
+				41BB5480211AD76700E2292B /* an04.png */,
+				41BB5483211AD76700E2292B /* an05.png */,
+				41BB5482211AD76700E2292B /* an06.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -259,10 +274,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41BB5485211AD76700E2292B /* an02.png in Resources */,
+				41BB5486211AD76700E2292B /* an04.png in Resources */,
+				41BB548A211AD76700E2292B /* an01.png in Resources */,
 				41B0DA372118162700C8A674 /* LaunchScreen.storyboard in Resources */,
 				41B0DA342118162700C8A674 /* Assets.xcassets in Resources */,
 				41B0DA322118162700C8A674 /* Main.storyboard in Resources */,
-				4119012E2118347E005F90E6 /*  apply.png in Resources */,
+				41BB5487211AD76700E2292B /* an03.png in Resources */,
+				41BB5488211AD76700E2292B /* an06.png in Resources */,
+				41BB5489211AD76700E2292B /* an05.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
