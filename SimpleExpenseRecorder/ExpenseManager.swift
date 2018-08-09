@@ -57,12 +57,12 @@ class ExpenseRecord: NSObject,NSCoding{
 class ExpenseManager: NSObject{
     let category: [Int] = [1,2,4,5,8,103,102,121,199,3,6,7,9,105,111,112,113,114]
     
-    let catDescription:[String] = ["shokuhi: 1","nichiyouhin: 2","sake: 3","kousai: 4",
-                                   "iryou: 5\n","jikotoushi: 6","kumiko: 7","kodomo: 8",
-                                   "Suica,Pasmo: 9","kumiko","Shokuhi:103","KouTsuuhi:102",
-                                   "JikoToushi:105","YogumataJi:121","kokuho:111",
-                                   "NHK JyusinRyo:112","Jyumin-Sei:113","softbank:114",
-                                   "other:199"]
+    let catDescription:[String] = ["Shokuhi: 1","Nichiyouhin: 2","Sake: 3","Kousai: 4",
+                                   "Iryou: 5\n","Jikotoushi: 6","Personal: 7","Kodomo: 8",
+                                   "Suica,Pasmo: 9","Personal:","Shokuhi:103","KouTsuuhi:102",
+                                   "JikoToushi:105","Karma Yoga:121","Kokuho:111",
+                                   "NHK JyusinRyo:112","Jyumin-Sei:113","Softbank:114",
+                                   "Other:199"]
     var records:[ExpenseRecord] = []
     
     static let sharedInstance: ExpenseManager = ExpenseManager()
@@ -95,7 +95,7 @@ class ExpenseManager: NSObject{
         else{
             self.records = []
             //index 0 is Heading
-            self.records.append( ExpenseRecord(_num: "No", _amount: "Amt", _month: "MM", _day: "DD", _memo: "Memo"))
+            self.records.append( ExpenseRecord(_num: "No / ", _amount: "Amount / ", _month: "MM/", _day: "DD / ", _memo: "Memo"))
         }
     }
 }
